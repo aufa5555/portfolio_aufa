@@ -1,5 +1,5 @@
 :root {
-  --bg: #f4ecff; --ink: #3b1e54; --muted: #66507f; --card: #fff;
+  --bg: #f3f4a4; --ink: #3b1e54; --muted: #66507f; --card: #fff;
   --pink: #ff6fae; --mint: #2ecf9f; --sky: #4aa8ff; --sun: #ffb800;
   --accent: #ff6fae; --line: #3b1e54;
 }
@@ -50,16 +50,16 @@ h2 {
 
 /* HERO */
 .hero { position: relative; padding: 4.5rem 0 3rem; }
-.hello { font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+.hello { font-size: 2.25rem; font-weight: 600; color: var(--ink); }
 h1 {
-  font-size: clamp(3rem, 13vw, 8rem); font-weight: 700; letter-spacing: -0.02em;
+  font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.02em;
   margin: .3rem 0; line-height: 1; cursor: default; user-select: none;
 }
 h1 span {
   display: inline-block; transition: transform .18s cubic-bezier(.3,1.8,.5,1);
   -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill;
 }
-.hint { font: 600 3.6rem "Caveat", cursive; color: var(--pink); transform: rotate(-3deg); width: fit-content; }
+.hint { font: 600 3.6rem "Caveat", cursive; color: var(--pink); transform: rotate(0deg); width: fit-content; }
 .doodle { position: absolute; width: 3.2rem; animation: bob 4s ease-in-out infinite; }
 .d1 { right: 12%; top: 3rem; color: var(--sun); width: 4rem; }
 .d2 { right: 4%; top: 12rem; color: var(--sky); width: 5rem; animation-delay: -1.3s; }
@@ -147,6 +147,28 @@ dialog p { color: var(--muted); }
   border-radius: 50%; border: 3px solid var(--line); box-shadow: 5px 5px 0 var(--line);
 }
 #about p { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* ACTIVITIES */
+.activity-pics {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.activity-pics .me {
+  margin: 0;
+}
+
+.activity-klcc {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.activity-klcc .me {
+  margin: 0;
+}
+
 
 /* LINKS + FOOTER */
 .links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
