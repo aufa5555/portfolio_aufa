@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Map Embed Example</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .map-container {
+      width: 90%;
+      max-width: 900px;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+      margin: 30px 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pesta Air Antarabangsa Kuala Perlis</h1>
+
+  <div class="map-container">
+    <!-- ✅ Correct iframe (no nested iframe) -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63440.03012323629!2d100.093!3d6.441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d110b4b0f0b7d%3A0x0!2sKuala%20Perlis!5e0!3m2!1sen!2smy!4v1620000000000!5m2!1sen!2smy"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <p>Visit Kuala Perlis for the exciting annual <strong>Pesta Air Antarabangsa</strong>!</p>
+</body>
+</html>

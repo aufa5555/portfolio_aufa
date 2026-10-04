@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - Pesta Air</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+	
+    /* Navigation */
+	
+   .navbar {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(234, 179, 8, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #eab308;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #92400e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #eab308;
+    }
+    
+    .nav-link:hover {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+	
+	
+    
+    /* Main Content */
+	
+	
+    .main-content {
+      max-width: 1200px;
+      margin: 100px auto 0;
+      padding: 50px 20px;
+    }
+    
+    .section-title {
+      text-align: center;
+      color: #92400e;
+      margin-bottom: 50px;
+      font-size: 3rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 150px;
+      height: 6px;
+      background: linear-gradient(90deg, #eab308, #ca8a04, #eab308);
+      margin: 20px auto;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3);
+    }
+	
+	
+    
+    /* About Section */
+	
+	
+    .about-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      margin-bottom: 60px;
+      border: 2px solid #fde68a;
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .about-text h3 {
+      color: #92400e;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(234, 179, 8, 0.2);
+    }
+    
+    .about-text p {
+      margin-bottom: 25px;
+      text-align: justify;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #666;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      border: 5px solid #eab308;
+    }
+    
+	
+	
+    /* Posters Section */
+	
+	
+    .posters-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      margin-bottom: 60px;
+      border: 2px solid #fde68a;
+    }
+    
+    .posters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+    
+    .poster-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(234, 179, 8, 0.15);
+      transition: all 0.4s ease;
+      border: 2px solid #fde68a;
+      position: relative;
+    }
+    
+    .poster-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+    }
+    
+    .poster-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(234, 179, 8, 0.25);
+    }
+    
+    .poster-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-bottom: 3px solid #eab308;
+    }
+    
+    .poster-info {
+      padding: 30px;
+    }
+    
+    .poster-info h4 {
+      color: #92400e;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-left: 4px solid #eab308;
+      padding-left: 20px;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .poster-date {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+    
+    .poster-details {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    .poster-details ul {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    
+    .poster-details li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    .poster-details li:before {
+      content: '•';
+      color: #eab308;
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+    
+    .organizers {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #92400e;
+      border: 1px solid #eab308;
+    }
+	
+	
+    
+    /* Timeline Section */
+	
+	
+    .timeline-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      border: 2px solid #fde68a;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #eab308, #ca8a04, #eab308);
+      transform: translateX(-50%);
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3);
+    }
+    
+    .timeline-item {
+      margin: 50px 0;
+      position: relative;
+    }
+    
+    .timeline-content {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      padding: 30px;
+      border-radius: 15px;
+      width: 45%;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(234, 179, 8, 0.15);
+      border: 2px solid #fde68a;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      left: 55%;
+    }
+    
+    .timeline-content:before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 25px;
+      height: 25px;
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px #eab308;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content:before {
+      right: -57px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content:before {
+      left: -57px;
+    }
+    
+    .timeline-date {
+      font-weight: bold;
+      color: #92400e;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .timeline-content h4 {
+      color: #92400e;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .timeline-content p {
+      color: #666;
+      line-height: 1.7;
+    }
+	
+	
+    
+    /* Footer */
+	
+	
+    footer {
+      background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+      color: #fef3c7;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      border-top: 5px solid #eab308;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-contact {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .footer-contact p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    
+    .footer-copyright {
+      border-top: 1px solid rgba(254, 243, 199, 0.3);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    
+    .footer-copyright p {
+      font-size: 1.1rem;
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline:before {
+        left: 30px;
+      }
+      
+      .timeline-content {
+        width: calc(100% - 80px);
+        left: 80px !important;
+      }
+      
+      .timeline-content:before {
+        left: -50px !important;
+      }
+      
+      .nav-container {
+        gap: 10px;
+      }
+      
+      .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      
+      .posters-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .about-section, .posters-section, .timeline-section {
+        padding: 30px;
+      }
+      
+      .main-content {
+        margin-top: 90px;
+      }
+      
+      .footer-contact p {
+        font-size: 0.9rem;
+      }
+    }
+	
+	
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="About.html" class="nav-link active">About</a>
+      <a href="Travel.html" class="nav-link">Travel</a>
+      <a href="accommodation.html" class="nav-link">Accommodation</a>
+	  <a href="ThingsToDo.html" class="nav-link">Things to Do</a>
+	  <a href="Gallery.html" class="nav-link">Gallery</a>
+	  <a href="BestPlaces.html" class="nav-link">Best Places</a>
+	  <a href="Food.html" class="nav-link">Food</a>
+    </div>
+  </nav>
+  
+  
+
+  <!-- Main Content -->
+  <div class="main-content">
+  
+  
+    
+   <!-- About Section -->
+    <section class="about-section">
+      <h2 class="section-title">About Pesta Air Antarabangsa</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Largest Water Festival in Northern Malaysia</h3>
+          <p>Pesta Air Antarabangsa Kuala Perlis 2025 is an annual event that brings communities together through water-based activities, cultural performances, and traditional competitions.</p>
+          <p>Organized by the Persatuan Khazanah Kuala Perlis and the Perlis State Government in collaboration with the Ministry of Tourism, Arts and Culture, this festival promises an unforgettable experience.</p>
+          <p>Join us at the Menteri Besar Incorporated (MBI) site to witness the excitement of this international water festival!</p>
+        </div>
+        <div class="about-image">
+          <img src="about.jpg" alt="Pesta Air Celebration">
+        </div>
+      </div>
+    </section>
+	
+	
+
+    <!-- Posters Section -->
+    <section class="posters-section">
+      <h2 class="section-title">Pesta Air 2025 Event Schedule</h2>
+      <div class="posters-grid">
+	  
+	  
+        
+        <!-- Poster 1 - Friday -->
+        <div class="poster-card">
+          <img src="2.jpg" alt="Poster Friday" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">12 SEPTEMBER 2025 - FRIDAY</div>
+            <h4>Opening Day & Official Opening Night</h4>
+            <div class="poster-details">
+              <ul>
+                <li>Vendor Sales (10:00 AM - 12:00 AM)</li>
+                <li>Official Opening Night by DYMM Tuanku Raja Perlis</li>
+                <li>Opening Performances</li>
+                <li>Royal Boat "Jarum Emas Putra Jamalullail" Cross-Honor Event</li>
+                <li>Decorated Boat Competition</li>
+                <li>Guest Artist Performances (Wany Hasrita & Datuk Ramli Sarip)</li>
+                <li>Cultural Performances (9:00 PM - 11:30 PM)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Poster 2 - Saturday -->
+        <div class="poster-card">
+          <img src="3.jpg" alt="Poster Saturday" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">13 SEPTEMBER 2025 - SATURDAY</div>
+            <h4>Community Sports & Village Beautification</h4>
+            <div class="poster-details">
+              <ul>
+                <li>Vendor Sales (10:00 AM - 12:00 AM)</li>
+                <li>Community Sports Competitions:
+                  <ul>
+                    <li>Pillow Fighting</li>
+                    <li>Greased Pole Climbing</li>
+                    <li>Fishing Competition</li>
+                  </ul>
+                </li>
+                <li>Time: 9:00 AM - 5:00 PM</li>
+                <li>Village Beautification Competition (8:00 PM - 11:30 PM)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+		
+		
+        
+        <!-- Poster 3 - Sunday -->
+        <div class="poster-card">
+          <img src="4.jpg" alt="Poster Sunday" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">14 SEPTEMBER 2025 - SUNDAY</div>
+            <h4>Traditional Boat Competition</h4>
+            <div class="poster-details">
+              <ul>
+                <li>Vendor Sales (10:00 AM - 12:00 AM)</li>
+                <li>Traditional Boat Competition P-12 & P-14</li>
+                <li>Time: 9:00 AM - 5:00 PM</li>
+                <li>Youth Gathering Night</li>
+                <li>Lucky Draw (9:00 PM - 11:00 PM)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+		
+		
+        
+        <!-- Poster 4 - Monday -->
+        <div class="poster-card">
+          <img src="5.jpg" alt="Poster Monday" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">15 SEPTEMBER 2025 - MONDAY</div>
+            <h4>Dragon Boat Competition</h4>
+            <div class="poster-details">
+              <ul>
+                <li>Vendor Sales (10:00 AM - 12:00 AM)</li>
+                <li>Traditional Boat Competition P-12 & P-14</li>
+                <li>Dragon Boat Competition</li>
+                <li>Time: 9:00 AM - 5:00 PM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+		
+		
+        
+        <!-- Poster 5 - Tuesday -->
+        <div class="poster-card">
+          <img src="6.jpg" alt="Poster Tuesday" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">16 SEPTEMBER 2025 - TUESDAY</div>
+            <h4>Closing Day & Prize Giving Ceremony</h4>
+            <div class="poster-details">
+              <ul>
+                <li>Vendor Sales (10:00 AM - 12:00 AM)</li>
+                <li>Traditional Boat Competition P-12 & P-14 (Finals)</li>
+                <li>Dragon Boat Competition (Finals)</li>
+                <li>Official Closing by DYMM Tuanku Raja Perlis</li>
+                <li>Prize Giving Ceremony</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Poster 6 - General Information -->
+        <div class="poster-card">
+          <img src="1.jpg" alt="Poster Information" class="poster-image">
+          <div class="poster-info">
+            <div class="poster-date">12-16 SEPTEMBER 2025</div>
+            <h4>Festival Information</h4>
+            <div class="poster-details">
+              <p><strong>Location:</strong> Menteri Besar Incorporated (MBI) Site, Kuala Perlis</p>
+              <p><strong>Organized by:</strong> Persatuan Khazanah Kuala Perlis and Perlis State Government</p>
+              <p><strong>In collaboration with:</strong> Ministry of Tourism, Arts and Culture</p>
+              <p><strong>Patron:</strong> DYMM Tuanku Raja Perlis</p>
+              <div class="organizers">
+                <strong>Supported by:</strong><br>
+                Agro Bank • Tourism Malaysia
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="section-title">Festival Tentative</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Day 1 - Friday</div>
+            <h4>Opening & Official Ceremony</h4>
+            <p>Official opening night with artist performances and decorated boat show</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Day 2 - Saturday</div>
+            <h4>Community Sports</h4>
+            <p>Traditional competitions and community sports for all ages</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Day 3 - Sunday</div>
+            <h4>Traditional Boats</h4>
+            <p>Traditional boat competitions and youth gathering</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Day 4 - Monday</div>
+            <h4>Dragon Boats</h4>
+            <p>Dragon boat competitions and continuing traditional events</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Day 5 - Tuesday</div>
+            <h4>Closing Ceremony</h4>
+            <p>Official closing and prize giving ceremony by DYMM Tuanku Raja Perlis</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <p><strong>Contact Information:</strong></p>
+        <p>Tel: 04-9738800 | Fax: 04-9738875</p>
+        <p>korporat[at]perlis.gov.my</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2024 Pesta Air Antarabangsa Kuala Perlis. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

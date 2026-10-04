@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+     /* Basic Page Setup */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2563eb, #1e40af); /* Gradient blue */
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #0f2a6b;
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-buttons {
+      display: inline-flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-btn {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 35px;
+      background: linear-gradient(145deg, #2563eb, #1e40af);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-btn:hover {
+      background: linear-gradient(145deg, #3b82f6, #2563eb);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+
+  
+    }
+  </style>
+</head>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-buttons">
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/what%20is%20bullying.html" class="nav-btn">Home</a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/type%20of%20bullying.html" class="nav-btn">Types</a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/causes.html" class="nav-btn">Causes </a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/effects.html" class="nav-btn">Effects</a>
+	  <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/prevent.html" class="nav-btn">Preventing</a>
+    </div>
+  </nav>
+<body>
+  <h1>Type of Bullying</h1>
+
+  <div class="gallery">
+    <div class="product">
+      <img src="phy.png" alt="school physical bullying">
+      <h3>Physical Bullying</h3>
+      <p>The use of physical force to harm or intimidate someone, including actions like hitting, kicking, shoving, and tripping.</p>
+    </div>
+
+    <div class="product">
+      <img src="verb.jpg" alt="school verbal bullying">
+      <h3>Verbal Bullying</h3>
+      <p>Using words to hurt, intimidate, or scare someone — such as name-calling, teasing, threatening, and inappropriate comments.</p>
+    </div>
+
+    <div class="product">
+      <img src="soc.jpg" alt="school social bullying">
+      <h3>Social Bullying</h3>
+      <p>Intentionally harming someone's reputation or relationships through exclusion, rumor-spreading, and manipulation.</p>
+    </div>
+
+  </div>
+  
+
+</body>
+</html>

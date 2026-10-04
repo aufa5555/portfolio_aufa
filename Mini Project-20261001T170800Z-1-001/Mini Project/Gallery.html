@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Media Gallery - Pesta Air</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      min-height: 100vh;
+    }
+	
+    
+    /* Navigation */
+	
+    .navbar {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(234, 179, 8, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #eab308;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #92400e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #eab308;
+    }
+    
+    .nav-link:hover {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+    
+	
+    /* Main Content */
+	
+    .main-content {
+      max-width: 1200px;
+      margin: 100px auto 0;
+      padding: 50px 20px;
+    }
+    
+    .section-title {
+      text-align: center;
+      color: #92400e;
+      margin-bottom: 50px;
+      font-size: 2.8rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 150px;
+      height: 6px;
+      background: linear-gradient(90deg, #eab308, #ca8a04, #eab308);
+      margin: 20px auto;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3);
+    }
+    
+	
+    /* Gallery Section */
+	
+    .gallery-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      margin-bottom: 60px;
+      border: 2px solid #fde68a;
+    }
+    
+    .gallery-description {
+      text-align: center;
+      color: #666;
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+	
+    
+    /* Simple Gallery Grid */
+	
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(234, 179, 8, 0.2);
+      transition: all 0.3s ease;
+      border: 3px solid #eab308;
+      background: white;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .image-caption {
+      padding: 20px;
+      text-align: center;
+      background: white;
+    }
+    
+    .image-caption h3 {
+      color: #92400e;
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+    
+    .image-caption p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .image-placeholder {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #92400e;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-bottom: 3px solid #eab308;
+    }
+
+
+
+    /* Footer */
+	
+    footer {
+      background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+      color: #fef3c7;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      border-top: 5px solid #eab308;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-contact {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .footer-contact p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    
+    .footer-copyright {
+      border-top: 1px solid rgba(254, 243, 199, 0.3);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    
+    .footer-copyright p {
+      font-size: 1.1rem;
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+	
+    /* Responsive */
+	
+    @media (max-width: 768px) {
+      .nav-container {
+        gap: 10px;
+      }
+      
+      .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .gallery-section {
+        padding: 30px;
+      }
+      
+      .main-content {
+        margin-top: 90px;
+        padding: 30px 20px;
+      }
+      
+      .footer-contact p {
+        font-size: 0.9rem;
+      }
+    }
+	
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="About.html" class="nav-link">About</a>
+      <a href="Travel.html" class="nav-link">Travel</a>
+      <a href="accommodation.html" class="nav-link">Accommodation</a>
+	  <a href="ThingsToDo.html" class="nav-link">Things to Do</a>
+	  <a href="Gallery.html" class="nav-link active">Gallery</a>
+	  <a href="BestPlaces.html" class="nav-link">Best Places</a>
+	  <a href="Food.html" class="nav-link">Food</a>
+    </div>
+  </nav>
+
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <h1 class="section-title">Media Gallery</h1>
+    
+    <section class="gallery-section">
+      <div class="gallery-description">
+        <p>Collection of photos from Pesta Air Antarabangsa Kuala Perlis. Capturing the excitement of cultural events, water activities, and festival atmosphere.</p>
+      </div>
+      
+	  
+	  
+      <!-- Simple Gallery Grid -->
+      <div class="gallery-grid">
+        
+		
+		
+        <!-- Photo 1 -->
+        <div class="gallery-item">
+          <img src="traditional.jpg" alt="Traditional Dance" class="gallery-image">
+          <div class="image-caption">
+            <h3>Traditional Dance</h3>
+            <p>Cultural performances at the main stage</p>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Photo 2 -->
+        <div class="gallery-item">
+          <img src="boat.jpg" alt="Boat Race" class="gallery-image">
+          <div class="image-caption">
+            <h3>Boat Race</h3>
+            <p>Traditional boat competition on the water</p>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Photo 3 -->
+        <div class="gallery-item">
+          <img src="opening.jpg" alt="Opening Ceremony" class="gallery-image">
+          <div class="image-caption">
+            <h3>Opening Ceremony</h3>
+            <p>Festival opening by DYMM Tuanku Raja Perlis</p>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Photo 4 -->
+        <div class="gallery-item">
+          <img src="kayak.jpg" alt="Kayak Activities" class="gallery-image">
+          <div class="image-caption">
+            <h3>Kayak Activities</h3>
+            <p>Visitors enjoying water sports at Tasik Timah Tasoh</p>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Photo 5 -->
+        <div class="gallery-item">
+          <img src="cultural.jpg" alt="Cultural Exhibition" class="gallery-image">
+          <div class="image-caption">
+            <h3>Cultural Exhibition</h3>
+            <p>Traditional crafts and arts exhibition</p>
+          </div>
+        </div>
+        
+		
+		
+        <!-- Photo 6 -->
+        <div class="gallery-item">
+          <img src="night.jpg" alt="Night Festival" class="gallery-image">
+          <div class="image-caption">
+            <h3>Night Festival</h3>
+            <p>Lighting and evening entertainment</p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </section>
+    
+  </div>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <p><strong>Contact Information:</strong></p>
+        <p>Tel: 04-9738800 | Fax: 04-9738875</p>
+        <p>korporat[at]perlis.gov.my</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2024 Pesta Air Antarabangsa Kuala Perlis. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

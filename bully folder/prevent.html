@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prevent Bullying</title>
+  <style>
+    /* Basic Page Setup */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2563eb, #1e40af); /* Gradient blue */
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+	
+    /* Navigation Bar */
+    .navbar {
+      background-color: #0f2a6b;
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-buttons {
+      display: inline-flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-btn {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 35px;
+      background: linear-gradient(145deg, #2563eb, #1e40af);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-btn:hover {
+      background: linear-gradient(145deg, #3b82f6, #2563eb);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Center Wrapper for Main Content */
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 120px); /* Adjust height minus navbar */
+      padding: 40px 20px;
+      flex-direction: column;
+      gap: 30px;
+   
+    }
+	.box-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .small-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: left;
+    }
+
+    /* Title */
+    .big-title {
+      font-size: 70px;
+      color:  #f9f943;
+      font-weight: bold;
+      margin: 0 0 40px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+	
+	  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-buttons">
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/what%20is%20bullying.html" class="nav-btn">Home</a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/type%20of%20bullying.html" class="nav-btn">Types</a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/causes.html" class="nav-btn">Causes </a>
+      <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/effects.html" class="nav-btn">Effects</a>
+	  <a href="file:///C:/Users/user/Downloads/assignment/Practical%20test%20html/prevent.html" class="nav-btn">Preventing</a>
+    </div>
+  </nav>
+  <!-- Centered Content -->
+  <div class="content-wrapper">
+    <div class="main-container">
+      <h1 class="big-title">How to Prevent Bullying?</h1>
+ 
+
+      <!-- Grid of Small Boxes -->
+    <div class="box-grid">
+      <div class="small-box">
+        <h3 class="box-title">Develop a Clear Anti-Bullying Policy</h3>
+        <p class="content-text">This policy must be clear, concise, and consistently enforced. It should define what bullying is (including cyberbullying), outline the consequences, and provide a reliable reporting procedure. Every student and parent should receive and acknowledge this policy.</p>
+      </div>
+
+      <div class="small-box">
+        <h3 class="box-title">Create Safe Spaces</h3>
+        <p class="content-text"> Ensure students know where they can go if they feel unsafe or overwhelmed, and who they can talk to.</p>
+      </div>
+
+      <div class="small-box">
+        <h3 class="box-title">Open Communication</h3>
+        <p class="content-text">Keep an open line of communication with parents about the school's anti-bullying initiatives.</p>
+      </div>
+
+      <div class="small-box">
+        <h3 class="box-title">Workshops for Parents</h3>
+        <p class="content-text">Offer workshops to help parents recognize signs that their child is being bullied or is bullying others, and how to respond effectively.</p>
+      
+    </div>
+
+  </div>
+  </div>
+
+</body>
+</html>

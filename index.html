@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nurfasihah Aufa | Multimedia Portfolio</title>
+  <meta name="description"
+    content="Graphic design, web and mobile design, and digital media by Nurfasihah Aufa, creative multimedia student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Nunito:wght@400;600&family=Caveat:wght@600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="nav">
+    <a href="#top" class="logo">NA</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Switch light or dark theme">Dark</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <svg class="doodle d1" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2l5 13 13 5-13 5-5 13-5-13L2 20l13-5z" fill="currentColor" />
+      </svg>
+      <svg class="doodle d2" viewBox="0 0 60 20" aria-hidden="true">
+        <path d="M2 10q7-12 14 0t14 0 14 0 14 0" fill="none" stroke="currentColor" stroke-width="4"
+          stroke-linecap="round" />
+      </svg>
+      <svg class="doodle d3" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="4 8"
+          stroke-linecap="round" />
+      </svg>
+      <p class="hello">Hello there, I'm</p>
+      <h1 id="name" aria-label="Nurfasihah Aufa Binti Zamzuri">Nurfasihah Aufa Binti Zamzuri</h1>
+      <p class="hint">Internship Seeker</p>
+    </section>
+
+    <div class="strip" aria-label="Tools I use">
+      <div class="track">
+        <span>Adobe Premiere Pro</span><span>Adobe
+          Animate</span><span>Photoshop</span><span>Illustrator</span><span>Maya</span><span>Java</span>
+        <span aria-hidden="true">Premiere Pro</span><span aria-hidden="true">After Effects</span><span
+          aria-hidden="true">Photoshop</span><span aria-hidden="true">Illustrator</span><span
+          aria-hidden="true">Figma</span><span aria-hidden="true">Blender</span><span aria-hidden="true">DaVinci
+          Resolve</span><span aria-hidden="true">Lightroom</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>About me</h2>
+      <img class="me" src="aufer.jpeg" alt="Photo of Nurfasihah Aufa">
+      <p><b>Nurfasihah Aufa</b></p>
+      <p>Hi! I am Nurfasihah Aufa Binti Zamzuri, a Creative Multimedia student from German-Malaysian Institute. I am
+        interested in graphic design, web, mobile design, and digital media. I enjoy creating visually appealing
+        designs while exploring how creative ideas can be turned into engaging digital experiences.</p><br> </br>
+      <p>I would love to continue learning new skills, exploring creative ideas, and turning concepts into meaningful
+        visual and digital
+        projects. Through my studies and projects, I have developed both my technical and creative abilities while
+        learning how to solve problems and work effectively as part of a team.</p><br> </br>
+      <p>I am always open to new opportunities and excited to take on new challenges, gain practical experience, and
+        continue growing as a multimedia
+        student. I am actively looking for an internship where I can grow and make a real impact.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="sketching">Sketching</button>
+        <button class="chip" data-f="design">Design</button>
+        <button class="chip" data-f="photo">Photo</button>
+        <button class="chip" data-f="coffee">Coffee projects</button>
+        <button class="chip" data-f="web">Website</button>
+        <button class="chip" data-f="Animation/Video">Animation/Video</button>
+      </div>
+
+      <!--
+        TO ADD YOUR OWN WORK: copy one <button class="tile"> block.
+        data-cat   = must match a filter chip's data-f (video, sketching, design, photo, coffee, web)
+        data-thumb = image shown on the tile
+        data-image = full image shown when opened
+        data-video = video file (clip.mp4) shown when opened
+        data-embed = YouTube/Vimeo embed link (https://www.youtube.com/embed/VIDEO_ID)
+        data-link  = adds a "Visit website" button in the popup
+        --a and --b = the two gradient colors used until you add a thumbnail
+      -->
+      <div class="grid" id="grid">
+
+        <!-- VIDEO -->
+        <button class="tile wide" data-cat="Animation/Video" style="--a:#2b4eff;--b:#7d3cff"
+          data-title="Animation/Video" data-desc="Animation about Tom & Gary inspired from Tom & Jerry cartoon."
+          data-tools="Adobe Animate" data-thumb="tom gary.png" data-embed="https://aufa5555.github.io/tomgary/">
+          <span class="type">Animation</span><span class="ttl">Animation</span>
+        </button>
+
+        <!-- VIDEO -->
+        <button class="tile wide" data-cat="Animation/Video" style="--a:#2b4eff;--b:#7d3cff"
+          data-title="Animation/Video" data-desc="Click the " Open the document
+          directly " button to view the animation.data-tools=" Maya, Capcut" data-thumb="perfume.png"
+          data-embed="https://drive.google.com/file/d/16akPV-y5srjz92e0Yhxej1LPjrt4789V/preview">
+          <span class="type">Animation</span><span class="ttl">Animation</span>
+        </button>
+
+        <!-- SKETCHING -->
+        <button class="tile" data-cat="sketching" style="--a:#2b4eff;--b:#7d3cff" data-title="Sketching" data-desc=""
+          data-tools="Pencil" data-thumb="gam4.jpg" data-image="gam4.jpg">
+          <span class="type">Sketching</span><span class="ttl">Sketching</span>
+        </button>
+
+        <button class="tile" data-cat="sketching" style="--a:#2b4eff;--b:#7d3cff" data-title="Sketching" data-desc=""
+          data-tools="Pencil" data-thumb="gam1.jpg" data-image="gam1.jpg">
+          <span class="type">Sketching</span><span class="ttl">Sketching</span>
+        </button>
+
+        <button class="tile" data-cat="sketching" style="--a:#2b4eff;--b:#7d3cff" data-title="Sketching" data-desc=""
+          data-tools="Pencil" data-thumb="gam2.jpg" data-image="gam2.jpg">
+          <span class="type">Sketching</span><span class="ttl">Sketching</span>
+        </button>
+
+        <!-- WEBSITE -->
+        <button class="tile wide" data-cat="web" style="--a:#14213d;--b:#2bd9c0" data-title="My Website Project"
+          data-desc="Website Financial Literacy Awareness" data-tools="Canva" data-thumb="website1.png"
+          data-image="website1.png" data-link="https://canva.link/tpxo6syx4kjxujl">
+          <span class="type">Web</span><span class="ttl">My Website Project</span>
+        </button>
+
+        <button class="tile wide" data-cat="web" style="--a:#14213d;--b:#2bd9c0" data-title="My Website Project"
+          data-desc="Website for Pesta Air" data-tools="Notepad++" data-thumb="website pesta air.png"
+          data-image="website pesta air.png" data-link="https://aufa5555.github.io/website-pesta-air/">
+          <span class="type">Web</span><span class="ttl">My Website Project</span>
+        </button>
+
+        <!-- DESIGN -->
+
+        <button class="tile tall" data-cat="design" style="--a:#14213d;--b:#2bd9c0" data-title="Poster Remake"
+          data-desc="A poster remake from Anak Perjanjian Syaitan 2" data-tools="Photoshop"
+          data-thumb="poster manipulation 2.jpg" data-image="poster manipulation 2.jpg">
+          <span class="type">Design</span><span class="ttl">Poster Remake</span>
+        </button>
+
+        <button class="tile tall" data-cat="design" style="--a:#14213d;--b:#2bd9c0" data-title="Poster"
+          data-desc="A poster design." data-tools="Photoshop" data-thumb="acc 2.jpg" data-image="acc 2.jpg">
+          <span class="type">Design</span><span class="ttl">Poster</span>
+        </button>
+
+
+        <!-- PHOTO -->
+        <button class="tile" data-cat="photo" style="--a:#ff9a3c;--b:#c2185b" data-title="Street photography set"
+          data-desc="KLCC building" data-tools="" data-thumb="Architecture.jpg" data-image="Architecture.jpg">
+          <span class="type">Photo</span><span class="ttl">Street photography set</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Colour"
+          data-desc="Fisherman's jetty." data-tools="" data-thumb="Colour.jpg" data-image="Colour.jpg">
+          <span class="type">Photo</span><span class="ttl">Colour</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Toys" data-desc="Lego Toys"
+          data-tools="" data-thumb="Toys.jpg" data-image="Toys.jpg">
+          <span class="type">Photo</span><span class="ttl">Toys</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Words"
+          data-desc="LED signboard" data-tools="" data-thumb="Words.jpg" data-image="Words.jpg">
+          <span class="type">Photo</span><span class="ttl">Words</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Water"
+          data-desc="Water fountain at KLCC" data-tools="" data-thumb="Water.jpg" data-image="Water.jpg">
+          <span class="type">Photo</span><span class="ttl">Water</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Shadow"
+          data-desc="Shadow of a fork" data-tools="" data-thumb="Shadow.jpg" data-image="Shadow.jpg">
+          <span class="type">Photo</span><span class="ttl">Shadow</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Light Trail"
+          data-desc="Light trail made with flashlight." data-tools="" data-thumb="Light Trail.jpg"
+          data-image="Light Trail.jpg">
+          <span class="type">Photo</span><span class="ttl">Light Trail</span>
+        </button>
+
+        <button class="tile" data-cat="photo" style="--a:#2b4eff;--b:#7d3cff" data-title="Portraits of emotion"
+          data-desc="Portraits capturing emotions." data-tools="" data-thumb="Potraits of emotion.jpg"
+          data-image="Potraits of emotion.jpg">
+          <span class="type">Photo</span><span class="ttl">Portraits of emotion</span>
+        </button>
+
+        <!-- COFFEE PROJECTS -->
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Logo Collection"
+          data-desc="Collection of logo by season." data-tools="Photoshop, Illustrator" data-thumb="all logo.jpg"
+          data-image="all logo.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Logo Collection</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Logo"
+          data-desc="Logo design for a coffee shop." data-tools="Illustrator" data-thumb="logo coffee.jpg"
+          data-image="logo coffee.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Logo</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Business Card"
+          data-desc="Business card design for a coffee shop." data-tools="Illustrator" data-thumb="bussiness card.jpg"
+          data-image="bussiness card.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Business Card</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Carrier"
+          data-desc="Carrier design for a coffee shop." data-tools=" Illustrator" data-thumb="carrier coffee.jpg"
+          data-image="carrier coffee.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Carrier</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Poster"
+          data-desc="Poster design for a coffee shop." data-tools="Photoshop" data-thumb="poster coffee.jpg"
+          data-image="poster coffee.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Poster</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Cup sleeve"
+          data-desc="Cup sleeve design for a coffee shop." data-tools=" Illustrator" data-thumb="cup sleeves.jpg"
+          data-image="cup sleeves.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Cup sleeve</span>
+        </button>
+
+        <button class="tile tall" data-cat="coffee" style="--a:#14213d;--b:#2bd9c0" data-title="Sticker"
+          data-desc="Sticker design for a coffee shop." data-tools="Illustrator" data-thumb="sticker morauf.jpg"
+          data-image="sticker morauf.jpg">
+          <span class="type">Coffee projects</span><span class="ttl">Sticker</span>
+        </button>
+
+
+
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I'm actively seeking an internship from January 2027 to May 2027. If you have any opportunities, please feel
+        free to reach out!</p>
+      <p class="links">
+        <a href="mailto:nurfasihah.zamzuri@student.gmi.edu.my">nurfasihah.zamzuri@student.gmi.edu.my</a>
+        <a href="" target="_blank" rel="noopener">019-5694210</a>
+        <a href="https://www.linkedin.com/in/nurfasihah-aufa-zamzuri-7b374b438" target="_blank"
+          rel="noopener">Linkedin</a>
+        <a href="" target="_blank" rel="noopener">Jitra, Kedah</a>
+      </p>
+    </section>
+  </main>
+
+  <dialog id="box" aria-labelledby="bt">
+    <button class="close" id="close" aria-label="Close">Close</button>
+    <div class="stage" id="stage"></div>
+    <h3 id="bt"></h3>
+    <p id="bd"></p>
+    <p class="made" id="bm"></p>
+    <a id="bl" class="visit" target="_blank" rel="noopener" hidden>Visit website ↗</a>
+  </dialog>
+
+  <footer>&copy; <span id="year"></span> Nurfasihah Aufa Binti Zamzuri</footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+:root {
+  --bg: #f4ecff; --ink: #3b1e54; --muted: #66507f; --card: #fff;
+  --pink: #ff6fae; --mint: #2ecf9f; --sky: #4aa8ff; --sun: #ffb800;
+  --accent: #ff6fae; --line: #3b1e54;
+}
+:root[data-theme="dark"] {
+  --bg: #22103a; --ink: #f7eeff; --muted: #c7b3e0; --card: #33194f;
+  --pink: #ff8cc0; --mint: #5cf0c0; --sky: #79c0ff; --sun: #ffd04d;
+  --accent: #ff8cc0; --line: #f7eeff;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  background: var(--bg); color: var(--ink); line-height: 1.7; overflow-x: hidden;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--ink) 14%, transparent) 2px, transparent 2.5px);
+  background-size: 28px 28px;
+}
+h1, h2, h3, .logo, .ttl, .chip, .btn { font-family: "Fredoka", system-ui, sans-serif; }
+a { color: var(--ink); text-decoration-color: var(--pink); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+a:hover { color: var(--pink); }
+:focus-visible { outline: 4px dashed var(--sky); outline-offset: 3px; }
+
+/* NAV */
+.nav {
+  position: sticky; top: .8rem; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+  margin: .8rem 4vw 0; padding: .6rem 1.2rem; background: var(--card);
+  border: 3px solid var(--line); border-radius: 99px; box-shadow: 4px 4px 0 var(--line);
+}
+.logo {
+  font-weight: 700; font-size: 1.4rem; color: var(--ink); text-decoration: none;
+  background: var(--sun); border-radius: 50%; width: 2.6rem; height: 2.6rem;
+  display: grid; place-items: center; transform: rotate(-8deg);
+}
+.nav nav { display: flex; gap: 1.1rem; align-items: center; }
+.nav nav a { font-weight: 600; text-decoration: none; }
+#theme {
+  font: 600 1rem "Fredoka", sans-serif; cursor: pointer; padding: .3rem .9rem;
+  border-radius: 99px; border: 2px solid var(--line); background: var(--mint); color: #22103a;
+}
+
+/* LAYOUT */
+main { max-width: 68rem; margin: 0 auto; padding: 0 5vw; }
+section { padding: 4rem 0 2rem; }
+section p { max-width: 60ch; color: var(--muted); font-size: 1.5rem; }
+h2 {
+  font-size: 2.4rem; font-weight: 700; margin-bottom: 1.2rem; width: fit-content;
+  background: linear-gradient(var(--sun), var(--sun)) 0 92%/100% .5rem no-repeat;
+}
+
+/* HERO */
+.hero { position: relative; padding: 4.5rem 0 3rem; }
+.hello { font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+h1 {
+  font-size: clamp(3rem, 13vw, 8rem); font-weight: 700; letter-spacing: -0.02em;
+  margin: .3rem 0; line-height: 1; cursor: default; user-select: none;
+}
+h1 span {
+  display: inline-block; transition: transform .18s cubic-bezier(.3,1.8,.5,1);
+  -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill;
+}
+.hint { font: 600 3.6rem "Caveat", cursive; color: var(--pink); transform: rotate(-3deg); width: fit-content; }
+.doodle { position: absolute; width: 3.2rem; animation: bob 4s ease-in-out infinite; }
+.d1 { right: 12%; top: 3rem; color: var(--sun); width: 4rem; }
+.d2 { right: 4%; top: 12rem; color: var(--sky); width: 5rem; animation-delay: -1.3s; }
+.d3 { right: 22%; top: 15rem; color: var(--mint); animation-delay: -2.4s; }
+@keyframes bob { 50% { transform: translateY(-14px) rotate(12deg); } }
+
+/* STRIP */
+.strip {
+  overflow: hidden; margin: 1rem -5vw; background: var(--pink); color: #22103a;
+  padding: .8rem 0; transform: rotate(-1.5deg); border-block: 3px solid var(--line);
+}
+.track { display: flex; gap: 2.5rem; width: max-content; animation: slide 30s linear infinite; }
+.track span { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.25rem; white-space: nowrap; }
+.track span::after { content: "✦"; margin-left: 2.5rem; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* FILTERS */
+.filters { display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.chip {
+  font-size: 1rem; font-weight: 500; cursor: pointer; padding: .4rem 1.2rem; border-radius: 99px;
+  border: 3px solid var(--line); background: var(--card); color: var(--ink);
+  box-shadow: 3px 3px 0 var(--line); transition: transform .15s;
+}
+.chip:hover { transform: translateY(-3px) rotate(-3deg); }
+.chip.on { background: var(--sky); color: #22103a; box-shadow: 0 0 0 var(--line); transform: translate(3px,3px); }
+
+/* GRID + TILES */
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-auto-rows: 13rem; grid-auto-flow: dense; gap: 1.6rem; padding: .5rem;
+}
+.tile {
+  position: relative; overflow: hidden; border: 3px solid var(--line);
+  border-radius: 26px 26px 26px 8px; cursor: pointer; text-align: left; font: inherit;
+  display: flex; flex-direction: column; justify-content: flex-end; gap: .2rem; padding: 1.1rem; color: #fff;
+  background: linear-gradient(135deg, var(--a), var(--b)) center/cover;
+  box-shadow: 6px 6px 0 var(--line); transform: rotate(-1.5deg);
+  transition: transform .25s cubic-bezier(.3,1.8,.5,1), box-shadow .25s;
+}
+.tile:nth-child(even) { transform: rotate(1.5deg); border-radius: 26px 8px 26px 26px; }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 45%, rgba(34,16,58,.75)); }
+.tile > * { position: relative; z-index: 1; }
+.tile:hover { transform: rotate(0) scale(1.04); box-shadow: 9px 9px 0 var(--line); }
+.tile.wide { grid-column: span 2; }
+.tile.tall { grid-row: span 2; }
+.tile .type {
+  align-self: flex-start; font: 600 .85rem "Fredoka", sans-serif; background: var(--sun);
+  color: #22103a; padding: .05rem .7rem; border-radius: 99px; margin-bottom: .3rem;
+}
+.tile .ttl { font-size: 1.45rem; font-weight: 600; }
+.tile[hidden] { display: none; }
+
+/* MODAL */
+dialog {
+  width: min(52rem, 92vw); max-height: 92vh; overflow: auto; border: 4px solid var(--line);
+  border-radius: 30px; padding: 1.2rem; background: var(--card); color: var(--ink);
+  box-shadow: 8px 8px 0 var(--pink);
+}
+dialog::backdrop { background: rgba(34,16,58,.75); }
+.close {
+  float: right; font: 600 1rem "Fredoka", sans-serif; cursor: pointer; border: 3px solid var(--line);
+  background: var(--sun); color: #22103a; border-radius: 99px; padding: .2rem 1rem;
+}
+.stage {
+  clear: both; aspect-ratio: 16/9; border: 3px solid var(--line); border-radius: 18px;
+  margin: .8rem 0 1rem; overflow: hidden; background: linear-gradient(135deg, var(--a), var(--b));
+  display: grid; place-items: center; color: #fff; text-align: center; padding: 1rem;
+}
+.stage video, .stage iframe { width: 100%; height: 100%; object-fit: contain; border: 0; background: #000; }
+
+/* Images: show whole picture, no zoom, no crop */
+.stage:has(img) { aspect-ratio: auto; background: none; }
+.stage img {
+  display: block; width: auto; max-width: 100%; height: auto; max-height: 75vh;
+  object-fit: contain; background: none; margin: 0 auto;
+}
+
+dialog h3 { font-size: 1.8rem; margin-bottom: .4rem; }
+dialog p { color: var(--muted); }
+.made { margin-top: .6rem; font-weight: 600; color: var(--ink); }
+
+/* ABOUT */
+.me {
+  display: block; margin: 0 auto 1.2rem; width: 12rem; height: 12rem; object-fit: cover;
+  border-radius: 50%; border: 3px solid var(--line); box-shadow: 5px 5px 0 var(--line);
+}
+#about p { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* LINKS + FOOTER */
+.links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.links a {
+  font: 500 1.05rem "Fredoka", sans-serif; text-decoration: none; padding: .4rem 1.2rem;
+  border: 3px solid var(--line); border-radius: 99px; background: var(--card);
+  box-shadow: 3px 3px 0 var(--line); transition: transform .15s;
+}
+.links a:nth-child(odd):hover { transform: rotate(-4deg) translateY(-3px); background: var(--mint); color: #22103a; }
+.links a:nth-child(even):hover { transform: rotate(4deg) translateY(-3px); background: var(--sun); color: #22103a; }
+footer { text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: .95rem; }
+footer::before { content: "✿ "; color: var(--pink); }
+
+/* RESPONSIVE */
+@media (max-width: 34rem) {
+  .tile.wide { grid-column: span 1; }
+  .doodle { display: none; }
+  .nav nav { gap: .7rem; }
+}
+
+/* REDUCED MOTION (only motion rules belong here) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .track, .doodle { animation: none; }
+  h1 span, .tile, .chip, .links a { transition: none; }
+
+  <a class="tile wide" href="https://canva.link/tpxo6syx4kjxujl" target="_blank" rel="noopener"
+   data-cat="web" style="--a:#14213d;--b:#2bd9c0" data-thumb="website-shot.jpg">
+  <span class="type">Web</span><span class="ttl">My Website Project</span>
+</a> 
+}

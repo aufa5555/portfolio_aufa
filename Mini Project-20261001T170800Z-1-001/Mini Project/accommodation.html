@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accommodation - Pesta Air</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+	
+	
+    /* Navigation */
+	
+	
+    .navbar {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(234, 179, 8, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #eab308;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #92400e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #eab308;
+    }
+    
+    .nav-link:hover {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+ 
+
+ 
+    /* Main Content */
+	
+	
+    .main-content {
+      max-width: 1200px;
+      margin: 100px auto 0;
+      padding: 50px 20px;
+    }
+    
+    .section-title {
+      text-align: center;
+      color: #92400e;
+      margin-bottom: 50px;
+      font-size: 2.8rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 150px;
+      height: 6px;
+      background: linear-gradient(90deg, #eab308, #ca8a04, #eab308);
+      margin: 20px auto;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3);
+    }
+    
+	
+	
+    /* Tips Section */
+	
+	
+    .tips-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      margin-bottom: 60px;
+      border: 2px solid #fde68a;
+    }
+    
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+    
+    .tip-card {
+      background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+      border-radius: 20px;
+      padding: 35px;
+      text-align: center;
+      transition: all 0.4s ease;
+      border-top: 5px solid #eab308;
+      border: 2px solid #fde68a;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tip-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+    }
+    
+    .tip-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(234, 179, 8, 0.25);
+    }
+    
+    .tip-icon {
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      filter: grayscale(0.3);
+    }
+    
+    .tip-card h3 {
+      color: #92400e;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .tip-card ul {
+      text-align: left;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .tip-card li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .tip-card li:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      background-color: #eab308;
+      border-radius: 50%;
+    }
+    
+	
+	
+    /* Accommodation Section */
+	
+	
+    .accommodation-section {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+      margin-bottom: 60px;
+      border: 2px solid #fde68a;
+    }
+    
+    .accommodation-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      gap: 15px;
+    }
+    
+    .accommodation-tab {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #eab308;
+      padding: 15px 35px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #92400e;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    
+    .accommodation-tab:hover {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .accommodation-tab.active {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+    
+    .accommodation-content {
+      display: none;
+    }
+    
+    .accommodation-content.active {
+      display: block;
+    }
+    
+    .accommodation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 35px;
+    }
+    
+    .accommodation-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(234, 179, 8, 0.15);
+      transition: all 0.4s ease;
+      border: 2px solid #fde68a;
+      position: relative;
+    }
+    
+    .accommodation-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+    }
+    
+    .accommodation-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(234, 179, 8, 0.25);
+    }
+    
+    .accommodation-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #92400e;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .accommodation-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .accommodation-card:hover .accommodation-image img {
+      transform: scale(1.05);
+    }
+    
+    .image-placeholder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #92400e;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #eab308;
+    }
+    
+    .accommodation-info {
+      padding: 30px;
+    }
+    
+    .accommodation-info h3 {
+      color: #92400e;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .distance-info {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      font-size: 15px;
+      border: 1px solid #eab308;
+    }
+    
+    .distance-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eab308;
+    }
+    
+    .distance-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .booking-btn {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+    
+    .booking-btn:hover {
+      background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(234, 179, 8, 0.4);
+    }
+	
+	
+    
+    /* Important Notice */
+	
+	
+    .notice-section {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 50%, #a16207 100%);
+      border-radius: 20px;
+      padding: 45px;
+      color: white;
+      text-align: center;
+      margin-bottom: 60px;
+      box-shadow: 0 15px 35px rgba(234, 179, 8, 0.3);
+      border: 3px solid #fde68a;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .notice-section:before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: float 20s linear infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-20px, -20px) rotate(360deg); }
+    }
+    
+    .notice-section h2 {
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .notice-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+    
+	
+	
+    /* Footer */
+	
+	
+    footer {
+      background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+      color: #fef3c7;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      border-top: 5px solid #eab308;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-contact {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .footer-contact p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    
+    .footer-copyright {
+      border-top: 1px solid rgba(254, 243, 199, 0.3);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    
+    .footer-copyright p {
+      font-size: 1.1rem;
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+	
+	
+    
+    /* Responsive */
+	
+	
+    @media (max-width: 768px) {
+      .nav-container {
+        gap: 10px;
+      }
+      
+      .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .accommodation-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .accommodation-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .accommodation-tab {
+        width: 250px;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .tips-section, .accommodation-section, .notice-section {
+        padding: 30px;
+      }
+      
+      .main-content {
+        margin-top: 90px;
+      }
+      
+      .footer-contact p {
+        font-size: 0.9rem;
+      }
+    }
+	
+	
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="About.html" class="nav-link">About</a>
+      <a href="Travel.html" class="nav-link">Travel</a>
+      <a href="accommodation.html" class="nav-link active">Accommodation</a>
+	  <a href="ThingsToDo.html" class="nav-link">Things to Do</a>
+	  <a href="Gallery.html" class="nav-link">Gallery</a>
+	  <a href="BestPlaces.html" class="nav-link">Best Places</a>
+	  <a href="Food.html" class="nav-link">Food</a>
+    </div>
+  </nav>
+
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+	
+	
+    <!-- Tips Section -->
+    <section class="tips-section">
+      <h2 class="section-title">Tips for Malaysian Tourists</h2>
+      <div class="tips-grid">
+	  
+	  
+        
+        <div class="tip-card">
+          <div class="tip-icon">🏨</div>
+          <h3>Accommodation</h3>
+          <ul>
+            <li>Book early, especially for 12-16 September</li>
+            <li>Festival dates are peak season</li>
+            <li>Stay in Kuala Perlis for proximity</li>
+            <li>Stay in Kangar for more options & cheaper rates</li>
+          </ul>
+        </div>
+		
+		
+        
+        <div class="tip-card">
+          <div class="tip-icon">⏰</div>
+          <h3>Planning & Timing</h3>
+          <ul>
+            <li>Arrive early to avoid peak crowding</li>
+            <li>Morning is better for visits</li>
+            <li>Allocate extra time for traffic & parking</li>
+            <li>Bring cash (local ringgit)</li>
+          </ul>
+        </div>
+		
+		
+        
+        <div class="tip-card">
+          <div class="tip-icon">🎒</div>
+          <h3>What to Bring</h3>
+          <ul>
+            <li>Lightweight, breathable clothes</li>
+            <li>Sun protection: hat, sunglasses, sunscreen</li>
+            <li>Rain gear: umbrella or poncho</li>
+            <li>Good walking shoes</li>
+            <li>Portable power bank & water bottle</li>
+          </ul>
+        </div>
+        
+		
+		
+        <div class="tip-card">
+          <div class="tip-icon">👑</div>
+          <h3>Cultural Conduct</h3>
+          <ul>
+            <li>Respect local customs</li>
+            <li>Dress modestly in traditional areas</li>
+            <li>Be mindful at water sport areas</li>
+            <li>Don't venture into restricted zones</li>
+            <li>Follow safety guidelines</li>
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+	
+	
+
+    <!-- Important Notice -->
+    <section class="notice-section">
+      <h2>Important Booking Notice</h2>
+      <div class="notice-content">
+        <p>🚨 <strong>Book your accommodation early!</strong> The festival period (12-16 September 2025) is peak season and places fill up quickly.</p>
+        <p>Recommended to book at least 2-3 months in advance for the best options and prices.</p>
+      </div>
+    </section>
+	
+	
+
+    <!-- Accommodation Section -->
+    <section class="accommodation-section">
+      <h2 class="section-title">Where to Stay</h2>
+      
+      <div class="accommodation-tabs">
+        <button class="accommodation-tab active" data-tab="hotels">Hotels</button>
+        <button class="accommodation-tab" data-tab="homestay">Homestay</button>
+      </div>
+	  
+	  
+      
+      <!-- Hotels Content -->
+      <div class="accommodation-content active" id="hotels-content">
+        <div class="accommodation-grid">
+          
+          <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="putra.jpg" alt="Putra Brasmana Hotel">
+              <div class="image-placeholder">Putra Brasmana Hotel</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>Putra Brasmana Hotel</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Walking:</span>
+                  <span>16 min (1.2km)</span>
+                </div>
+                <div class="distance-item">
+                  <span>Driving:</span>
+                  <span>5 min</span>
+                </div>
+              </div>
+              <p>Comfortable hotel with modern amenities, located within walking distance from the festival venue.</p>
+              <a href="https://my.trip.com/hotels/kuala-perlis-hotel-detail-9885379/putra-brasmana-hotel?locale=en-
+			  MY&allianceid=14900&sid=1910298&ppcid=adid-82188873274612_akid-dat-2333988308597872%3Aloc-112_adgid-131
+			  5018301611714&utm_source=bing&utm_medium=cpc&utm_campaign=521231505&msclkid=e36ef2425fd61e126c669abb905
+			  34482" target="_blank" class="booking-btn">Book Now</a>
+            </div>
+          </div>
+          
+		  
+		  
+          <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="zuley.jpg" alt="The Zuley Heritage">
+              <div class="image-placeholder">The Zuley Heritage</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>The Zuley Heritage</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Walking:</span>
+                  <span>10 min (700m)</span>
+                </div>
+                <div class="distance-item">
+                  <span>Distance:</span>
+                  <span>700 meters</span>
+                </div>
+              </div>
+              <p>Heritage-style accommodation offering unique cultural experience close to festival grounds.</p>
+              <a href="https://www.agoda.com/the-zuley-heritage-hotel/hotel/kangar-my.html?countryId=198&finalPriceView
+			  =1&isShowMobileAppPrice=false&cid=1915003&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&
+			  maxRooms=0&checkIn=2025-11-1&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&tr
+			  avellerType=-1&showReviewSubmissionEntry=false&currencyCode=MYR&isFreeOccSearch=false&tag=e2e04d86-9c56-4
+			  d8c-9959-c76ce210e968&tspTypes=16&los=1&searchrequestid=30b7f1b9-110a-4cb6-a6d8-0dd228d02d3e&ds=P22W8fQiN
+			  JNhV8Le" target="_blank" class="booking-btn">Book Now</a>
+            </div>
+          </div>
+          
+		  
+		  
+          <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="dview.jpg" alt="D'View Hotel">
+              <div class="image-placeholder">D'View Hotel</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>D'View Hotel</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Driving:</span>
+                  <span>5 min (1.5km)</span>
+                </div>
+                <div class="distance-item">
+                  <span>Distance:</span>
+                  <span>1.5 kilometers</span>
+                </div>
+              </div>
+              <p>Modern hotel with scenic views, easily accessible by car from the festival location.</p>
+              <a href="https://www.booking.com/hotel/my/d-39-view-villa-amp-guest-houses.en-gb.html?aid=22
+			  76428&label=msn-3k7AktpMtgy9J%2A5%2AThjAzg-80814248101747%3Atikwd-80814398385470%3Aloc-112%3
+			  Aneo%3Amte%3Alp158950%3Adec%3Aqsdview%20hotel%20kuala%20perlis-Share-ykgAOI%401761202786&sid
+			  =8fabda37de487ec8dfb5b283142f3004&dest_id=-2401831&dest_type=city&dist=0&group_adults=2&grou
+			  p_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type
+			  =total&sr_order=popularity&srepoch=1761202982&srpvid=b705318a104e0350&type=total&ucfs=1&" 
+			  target="_blank" class="booking-btn">Book Now</a>
+            </div>
+          </div>
+		  
+		  
+		  
+		   <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="seri.jpg" alt="Hotel Seri Malaysia">
+              <div class="image-placeholder">Hotel Seri Malaysia</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>Hotel Seri Malaysia</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Distance:</span>
+                  <span>10 kilometers</span>
+                </div>
+                <div class="distance-item">
+                  <span>Driving:</span>
+                  <span>14 min</span>
+                </div>
+              </div>
+              <p>Perfectly positioned in Kangar near Kuala Perlis, this stay puts you within easy reach of all Perlis's popular destinations!</p>
+              <a href="https://www.booking.com/hotel/my/kangar-perlis.en-gb.html?aid=2276428&label=msn-vnxdee28m_6fop_ZvDc4PQ-79920895481022%3Atik
+			  wd-79921124370936%3Aloc-112%3Aneo%3Amte%3Alp158766%3Adec%3Aqshotel%20seri%20malaysia%20kangar%20perlis&sid=8fabda37de487ec8dfb5b2831
+			  42f3004&dest_id=-2401845&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0
+			  &room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1761655688&srpvid=6c4559ffe05202e7&type=total&ucfs=1&" target="_blank" 
+			  class="booking-btn">Book Now</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+	  
+	  
+      <!-- Homestay Content -->
+      <div class="accommodation-content" id="homestay-content">
+        <div class="accommodation-grid">
+          
+		  
+		  
+          <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="garden.jpg" alt="Come2Us Homestay">
+              <div class="image-placeholder">Come2Us Homestay</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>Garden Inns Motel</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Driving:</span>
+                  <span>11 min </span>
+                </div>
+                <div class="distance-item">
+                  <span>Distance:</span>
+                  <span>6.8 kilometers</span>
+                </div>
+              </div>
+              <p>Located in Kangar but the nearest to Kuala Perlis. Easy access to every tourist attraction around Perlis!</p>
+              <a href="https://www.booking.com/hotel/my/come2us-homestay.html?aid=357028&label=bin859jc-10CAsooQFCEGNvbWUydXMtaG9tZXN0YXlIM3gDaKEBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALLqufHBsACAdICJGY5MzVlODdiLTU2YTUtNGU0My1iMDBhLTk5MTcxZTliYmE0ZtgCAeACAQ&sid=8fabda37de487ec8dfb5b283142f3004&dest_id=-2401831&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1761203542&srpvid=5af332a63f590466&type=total&ucfs=1&" target="_blank" class="booking-btn">Book Now</a>
+            </div>
+          </div>
+		  
+		  
+          
+          <div class="accommodation-card">
+            <div class="accommodation-image">
+              <img src="nurisfa.jpg" alt="Nurisfa Homestay">
+              <div class="image-placeholder">Nurisfa Homestay</div>
+            </div>
+            <div class="accommodation-info">
+              <h3>Nurisfa Homestay</h3>
+              <div class="distance-info">
+                <div class="distance-item">
+                  <span>Driving:</span>
+                  <span>9 min (5.3km)</span>
+                </div>
+                <div class="distance-item">
+                  <span>Distance:</span>
+                  <span>5.3 kilometers</span>
+                </div>
+              </div>
+              <p>Cozy homestay located a short drive away, offering local hospitality experience.</p>
+              <a href="https://nurisfahomestay.blogspot.com/?fbclid=IwY2xjawNmtYpleHRuA2FlbQIxMABicmlk\
+			  ETFUaHFGVjEzUWZaclVHOG5uAR6PmTXu4edsPWKV9FH-9mx4mFq_2quENEVTzzMJ_0KN0sPwqM0J46lBHTcktg_ae
+			  m_RMRCx7gB9LYY10lcxLB6Vw" target="_blank" class="booking-btn">Book Now</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </section>
+
+  </div>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <p><strong>Contact Information:</strong></p>
+        <p>Tel: 04-9738800 | Fax: 04-9738875</p>
+        <p>korporat[at]perlis.gov.my</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2024 Pesta Air Antarabangsa Kuala Perlis. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab functionality for accommodation
+    document.querySelectorAll('.accommodation-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        document.querySelectorAll('.accommodation-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.accommodation-content').forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding content
+        tab.classList.add('active');
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(`${tabId}-content`).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
